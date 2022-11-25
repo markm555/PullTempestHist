@@ -65,14 +65,47 @@ namespace PullTempestHist
         /*
           Fill in your values here and run the program to pull History.
         */
-        private static string WeatherToken = "a307d230-391e-4b32-a807-80b15072982e";
-        private static string DeviceID = "152639";
-        private static long StartTime = 1640995201;
+        private static string WeatherToken = "Got to https://tempestwx.com/, login, then go to Settings -> Data Authorizations -> Create Token, then copy & paste that token into your app. to get access token";
+        private static string DeviceID = "<You Device ID";
+        private static long StartTime = <Epoch Start Time;
         private static long StopTime = StartTime + 86400;
-        private static string dbserver = "sqldb";
-        private static string database = "Weather3";
+        private static string dbserver = "<Your SQL Server>";
+        private static string database = "Weather";
         private static int sday = 1; //  /  These values are the days back you want to pull history with a start and an end day  \
         private static int eday = 2; //  \  Today is 0, yesterday is 1 etc.  The values as set will pull just yesterdays history /
+        
+        // T-SQL to create database and table.  Use SSMS to run this sample
+        //
+        // Create database Weather
+        //
+        //Use Weather3
+        //Drop table if exists history
+        //
+        //create table history
+        //(
+	    //epoch datetime ,
+	    //windlull float,
+	    //windavg  float null,
+	    //windgust float null,
+	    //winddir float null,
+	    //windsample float null,
+	    //pressure float null,
+	    //airtemp float null,
+	    //relhumidity float null,
+	    //illuminance float null,
+	    //uv float null,
+	    //solar float null,
+	    //rain float null,
+	    //preciptype float null,
+	    //strikedist float null,
+	    //strikecount float null,
+	    //battery float null,
+	    //reptint float null,
+	    //dayrain float null,
+	    //ncrainacc float null,
+	    //dayrainacc float null,
+	    //precipatype float null
+        //)
 
 
         static SqlConnection SQLDBconnect()
